@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV File Reader and Search</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for header */
+    .search-header {
+      background-color: orange;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    /* Custom CSS for form groups */
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="search-header">
+  <h1>SEARCH ENGINE</h1>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="csvFile">Upload CSV File:</label>
+        <input type="file" class="form-control-file" id="csvFile" accept=".csv">
+        <button class="btn btn-secondary mt-2" onclick="clearFileInput()">Clear</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="searchInput">Search:</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchInput" placeholder="Enter ICS Code">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" onclick="searchICSCode()">Search</button>
+            <button class="btn btn-secondary" type="button" onclick="clearSearchInput()">Clear</button>
+            <button class="btn btn-danger" onclick="clearAll()">Clear All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList">ICS Code:</label>
+        <select multiple class="form-control" id="resultsList"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList()">Clear</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList2">Part Name:</label>
+        <select multiple class="form-control" id="resultsList2"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList2()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the Program Name section -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList3">Program Name:</label>
+        <select multiple class="form-control" id="resultsList3"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList3()">Clear</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList4">Feeder Type:</label>
+        <select multiple class="form-control" id="resultsList4"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList4()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList5">Line No.:</label>
+        <select multiple class="form-control" id="resultsList5"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList5()">Clear</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList6">Machine No.:</label>
+        <select multiple class="form-control" id="resultsList6"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList6()">Clear</button>
+      </div>
+    </div>
+  </div>
+  
+    
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList7">P.No:</label>
+        <select multiple class="form-control" id="resultsList7"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList7()">Clear</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="resultsList8">No. Points:</label>
+        <select multiple class="form-control" id="resultsList8"></select>
+        <button class="btn btn-secondary mt-2" onclick="clearResultsList8()">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap JS and your custom script.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+  function clearFileInput() {
+    document.getElementById('csvFile').value = '';
+  }
+
+  function clearSearchInput() {
+    document.getElementById('searchInput').value = '';
+  }
+
+  function clearResultsList() {
+    document.getElementById('resultsList').innerHTML = '';
+  }
+
+  function clearResultsList2() {
+    document.getElementById('resultsList2').innerHTML = '';
+  }
+
+  function clearResultsList3() {
+    document.getElementById('resultsList3').innerHTML = '';
+  }
+  function clearResultsList4() {
+    document.getElementById('resultsList4').innerHTML = '';
+  }
+  function clearResultsList5() {
+    document.getElementById('resultsList5').innerHTML = '';
+  }
+  function clearResultsList6() {
+    document.getElementById('resultsList6').innerHTML = '';
+  }
+  function clearResultsList7() {
+    document.getElementById('resultsList7').innerHTML = '';
+  }
+  function clearResultsList8() {
+    document.getElementById('resultsList8').innerHTML = '';
+  }
+
+  function clearAll() {
+    clearSearchInput();
+    clearResultsList();
+    clearResultsList2();
+    clearResultsList3();
+    clearResultsList4();
+    clearResultsList5();
+    clearResultsList6();
+    clearResultsList7();
+    clearResultsList8();
+    // Add any additional clear functions here if needed
+  }
+</script>
+
+</body>
+</html>
